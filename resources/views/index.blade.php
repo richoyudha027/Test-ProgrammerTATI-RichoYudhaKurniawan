@@ -1,3 +1,5 @@
 @extends('layouts.app')
 
-@include('partials.helloworld')
+@section('content')
+    @include('partials.helloworld')
+@endsection

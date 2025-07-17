@@ -1,18 +1,21 @@
-{{-- helloword.blade.php --}}
+<head>
+    <title>Hello World Function</title>
+</head>
+
 <section class="container">
     <h1>HelloWorld Function</h1>
 
     <form id="helloWorldForm" method="GET">
         <div class="form-group">
             <label for="n">Masukkan nilai n:</label>
-            <input type="number" id="n" name="n" value="{{ old('n', session('n')) }}" min="1" max="100" required placeholder="Masukkan nilai lebih dari atau sama dengan 1">
+            <input type="number" id="n" name="n" value="{{ old('n', session('n')) }}" min="1" max="" required placeholder="Masukkan nilai lebih dari atau sama dengan 1">
         </div>
         <button type="submit">Tampilkan</button>
     </form>
 
     <div id="resultContainer">
         @if(session('show_result') && session('sequences') && count(session('sequences')) > 0)
-            <h2>helloworld({{ session('n') }}) => {{ implode(' ', session('sequences')) }}</h2>
+            <p>helloworld({{ session('n') }}) => {{ implode(' ', session('sequences')) }}</p>
         @endif
     </div>
 </section>
