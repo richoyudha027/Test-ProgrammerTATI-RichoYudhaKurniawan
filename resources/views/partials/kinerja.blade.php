@@ -5,7 +5,7 @@
 <section class="container">
     <h1>Predikat Kinerja Pegawai</h1>
 
-    <form action="{{ route('predikat-kinerja') }}" method="POST">
+    <form action="{{ route('predikat-kinerja.store') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="hasil_kerja">Hasil Kerja:</label>
