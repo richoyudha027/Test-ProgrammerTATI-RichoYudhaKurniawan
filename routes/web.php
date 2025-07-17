@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\HelloWorldController;
+use App\Http\Controllers\KinerjaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HelloWorldController::class, 'index'])->name('index');
-Route::get('/helloworld', [HelloWorldController::class, 'index'])->name('helloworld');
+Route::get('/predikat-kinerja', [KinerjaController::class, 'index'])->name('predikat-kinerja.index');
+Route::post('/predikat-kinerja', [KinerjaController::class, 'predikat_kinerja'])->name('predikat-kinerja');
 
