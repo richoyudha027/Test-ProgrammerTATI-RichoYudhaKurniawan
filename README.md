@@ -1,6 +1,6 @@
 # Test-ProgrammerTATI-RichoYudhaKurniawan
 
-Repositori ini digunakan untuk keperluan magang di PT Tatacipta Teknologi Indonesia. Setiap masalah atau tugas akan dikerjakan pada branch yang terpisah, dan solusi untuk masing-masing masalah dapat dilihat dengan checkout ke branch yang sesuai.
+Repositori ini digunakan untuk keperluan seleksi magang di PT Tatacipta Teknologi Indonesia. Setiap problem akan dikerjakan pada branch yang terpisah, dan solusi untuk masing-masing masalah dapat dilihat dengan checkout ke branch yang sesuai.
 
 ## Cara Melihat Kode Solusi untuk Setiap Masalah
 
