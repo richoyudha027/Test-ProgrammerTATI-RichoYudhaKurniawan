@@ -19,12 +19,14 @@ cp .env.example .env
 php artisan key:generate  
 ```
 
-## Langkah 4: Storage Link
+## Langkah 4: Konfigurasi `.env` untuk Terhubung ke DB
+
+## Langkah 5: Migrasi Database
 ```
-php artisan storage:link
+php artisan migrate
 ```
 
-## Langkah 5: Jalankan Aplikasi secara Lokal  
+## Langkah 6: Jalankan Aplikasi secara Lokal  
 Jalankan perintah berikut untuk menjalankan aplikasi.
 ```
 php artisan serve
