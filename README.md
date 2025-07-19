@@ -29,9 +29,7 @@ php artisan key:generate
 php artisan storage:link
 ```
 
-## Langkah 6: Atur Konfigurasi `.env` Untuk Terhubung ke DB
-
-Salin semua konten yang ada di file `.env.tmp` dan tempelkan ke dalam file `.env` untuk mengonfigurasi _environtment variable_ yang diperlukan.  
+## Langkah 6: Atur Konfigurasi `.env` Untuk Terhubung ke DB  
 
 ## Langkah 7: Migrasi Database  
 
