@@ -34,10 +34,20 @@ Salin semua konten yang ada di file `.env.tmp` dan tempelkan ke dalam file `.env
 
 ```
 php artisan migrate
-```
+```  
 
 ## Langkah 8: Seed Database
 
 ```
 php artisan db:seed --class=UserSeeder
+```
+
+## Langkah 9: Jalankan Aplikasi secara Lokal  
+Jalankan perintah berikut untuk menjalankan aplikasi.
+```
+php artisan serve
+```
+dan
+```
+npm run dev
 ```
