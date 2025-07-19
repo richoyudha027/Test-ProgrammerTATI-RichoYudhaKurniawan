@@ -24,7 +24,7 @@ php artisan key:generate
 php artisan storage:link
 ```
 
-## Langkah 5: Buat Database 
+## Langkah 5: Konfigurasi `.env` untuk Terhubung ke DB
 
 ## Langkah 6: Migrasi Database  
 
