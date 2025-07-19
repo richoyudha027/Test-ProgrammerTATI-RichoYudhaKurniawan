@@ -5,37 +5,42 @@ Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek ini secara
 ## Langkah 1: Install Dependensi
 ```
 composer install
-````
+```
 
-## Langkah 2: Salin File Konfigurasi `.env` dari `.env.example`
+## Langkah 2: Install Package Laravel Sacntum
+```
+composer require laravel/sanctum
+```
+
+## Langkah 3: Salin File Konfigurasi `.env` dari `.env.example`
 
 ```
 cp .env.example .env  
 ```
 
-## Langkah 3: Generate Key Aplikasi  
+## Langkah 4: Generate Key Aplikasi  
 
 ```
 php artisan key:generate  
 ```
 
-## Langkah 4: Storage Link
+## Langkah 5: Storage Link
 ```
 php artisan storage:link
 ```
 
-## Langkah 5: Konfigurasi `.env` untuk Terhubung ke DB
+## Langkah 6: Konfigurasi `.env` untuk Terhubung ke DB
 
-## Langkah 6: Migrasi Database  
+## Langkah 7: Migrasi Database  
 
 ```
 php artisan migrate
 ```  
 
-## Langkah 7: Seed Database
+## Langkah 8: Seed Database
 
 ```
-php artisan db:seed
+php artisan db:seed --class=ProvinsiSeeder
 ```
 
 ## Langkah 8: Jalankan Aplikasi secara Lokal  
