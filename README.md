@@ -5,28 +5,31 @@ Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek ini secara
 ## Langkah 1: Install Dependensi
 ```
 composer install
-````
+```
 
-## Langkah 2: Salin File Konfigurasi `.env` dari `.env.example`
+## Langkah 2: Install Vite
+```
+npm install --save-dev vite
+```
+
+## Langkah 3: Salin File Konfigurasi `.env` dari `.env.example`
 
 ```
 cp .env.example .env  
 ```
 
-## Langkah 3: Generate Key Aplikasi  
+## Langkah 4: Generate Key Aplikasi  
 
 ```
 php artisan key:generate  
 ```
 
-## Langkah 4: Storage Link
+## Langkah 5: Storage Link
 ```
 php artisan storage:link
 ```
 
-## Langkah 5: Buat Database MySQL  
-
-## Langkah 6: Atur Konfigurasi `.env`  
+## Langkah 6: Atur Konfigurasi `.env` Untuk Terhubung ke DB
 
 Salin semua konten yang ada di file `.env.tmp` dan tempelkan ke dalam file `.env` untuk mengonfigurasi _environtment variable_ yang diperlukan.  
 
