@@ -71,13 +71,11 @@
                                         <i class="fas fa-edit text-sm"></i>
                                     </a>
                                     
-                                    <form action="{{ route('logbooks.destroy', $logbook->id) }}" method="POST" class="inline-block">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="px-3 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300" onclick="return confirm('Yakin ingin menghapus?')">
-                                            <i class="fas fa-trash-alt text-sm"></i> 
-                                        </button>
-                                    </form>
+                                    <button type="button" 
+                                            class="px-3 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300 ml-2"
+                                            onclick="openDeleteModal({{ $logbook->id }})">
+                                        <i class="fas fa-trash-alt text-sm"></i> 
+                                    </button>
                                 @else
                                     <span class="text-gray-400 text-xs">Sudah diverifikasi</span>
                                 @endif
@@ -93,3 +91,77 @@
         </div>
     @endif
 </div>
+
+<!-- Modal Delete Confirmation -->
+<div id="deleteModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden z-50 flex items-center justify-center">
+    <div class="relative mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <div class="mt-3">
+            <div class="flex items-center justify-center w-12 h-12 mx-auto bg-red-100 rounded-full mb-4">
+                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                </svg>
+            </div>
+            <h3 class="text-lg font-medium text-gray-900 text-center mb-2">Konfirmasi Hapus</h3>
+            <p class="text-sm text-gray-500 text-center mb-6">
+                Yakin ingin menghapus logbook ini? Tindakan ini tidak dapat dibatalkan.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <button type="button" 
+                        class="px-4 py-2 bg-red-600 text-white text-base font-medium rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
+                        onclick="confirmDelete()">
+                    Ya, Hapus
+                </button>
+                <button type="button" 
+                        class="px-4 py-2 bg-gray-300 text-gray-700 text-base font-medium rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-colors"
+                        onclick="closeDeleteModal()">
+                    Batal
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form id="deleteForm" method="POST" style="display: none;">
+    @csrf
+    @method('DELETE')
+</form>
+
+<script>
+    let currentLogbookId = null;
+
+    function openDeleteModal(logbookId) {
+        currentLogbookId = logbookId;
+        const modal = document.getElementById('deleteModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDeleteModal() {
+        const modal = document.getElementById('deleteModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+        currentLogbookId = null;
+    }
+
+    function confirmDelete() {
+        if (currentLogbookId) {
+            const form = document.getElementById('deleteForm');
+            form.action = `/logbooks/${currentLogbookId}`;
+            form.submit();
+        }
+    }
+
+    document.getElementById('deleteModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeDeleteModal();
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeDeleteModal();
+        }
+    });
+</script>
