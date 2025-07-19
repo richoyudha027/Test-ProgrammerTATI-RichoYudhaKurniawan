@@ -28,7 +28,7 @@ php artisan storage:link
 
 ## Langkah 6: Atur Konfigurasi `.env`  
 
-Salin semua konten yang ada di file `.env.tmp` dan tempelkan ke dalam file `.env` untuk mengonfigurasi _environtment variabel_ yang diperlukan.  
+Salin semua konten yang ada di file `.env.tmp` dan tempelkan ke dalam file `.env` untuk mengonfigurasi _environtment variable_ yang diperlukan.  
 
 ## Langkah 7: Migrasi Database  
 
